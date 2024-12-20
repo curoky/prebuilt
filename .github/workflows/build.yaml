@@ -59,6 +59,7 @@ jobs:
       - run: ~/.local/bin/task setup
       - run: ~/.local/bin/task ${{ matrix.name }}
       - run: ./pack.py
+      - run: chmod +w -R /tmp/output
       - run: ./script/patch-nix-path.sh /tmp/output
       - run: tar -czvf ${{ matrix.name }}.darwin_arm64.tar.gz /tmp/output
       - uses: svenstaro/upload-release-action@v2
@@ -201,6 +202,7 @@ jobs:
       - run: ~/.local/bin/task setup
       - run: ~/.local/bin/task ${{ matrix.name }}
       - run: ./pack.py
+      - run: chmod +w -R /tmp/output
       - run: ./script/patch-nix-path.sh /tmp/output
       - run: ./script/strip-bin.sh /tmp/output
       - run: tar -czvf ${{ matrix.name }}.linux_amd64.tar.gz /tmp/output
