@@ -10,7 +10,8 @@ tasks:
       - nix-channel --add https://github.com/NixOS/nixpkgs/archive/staging.tar.gz staging
       - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
       - nix-channel --update
-      - mkdir -p ~/nix/profiles/
+      - mkdir -p ~/nix/profiles
+
   bzip2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bzip2
   connect: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.connect
   curl: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.curl

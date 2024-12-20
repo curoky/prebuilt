@@ -102,15 +102,6 @@ jobs:
       - uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-24.11
-
-      # - uses: actions/cache@v4
-      #   id: cache
-      #   with:
-      #     path: path/to/dependencies
-      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
-      # - name: Install Dependencies
-      #   if: steps.cache.outputs.cache-hit != 'true'
-      #   run: /install.sh
       - run: sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 
       - run: ~/.local/bin/task setup
@@ -131,6 +122,44 @@ jobs:
       matrix:
         include:
           - name: bzip2
+          - name: connect
+          - name: curl
+          - name: ethtool
+          - name: findutils
+          - name: gnugrep
+          - name: gnupatch
+          - name: gnused
+          - name: gnutar
+          - name: gzip
+          - name: iproute2
+          - name: iptables
+          - name: iputils
+          - name: jq
+          - name: krb5
+          - name: less
+          - name: libcap
+          - name: lsb-release
+          - name: lsof
+          - name: ncdu_1
+          - name: nettools
+          - name: ninja
+          - name: openssh_gssapi
+          - name: patchelf
+          - name: procps
+          - name: rsync
+          - name: snappy
+          - name: strace
+          - name: tmux
+          - name: tree
+          - name: xxd
+          - name: unzip
+          - name: xz
+          - name: zip
+          - name: zlib
+          - name: zlib-ng
+          - name: zstd
+          - name: util-linux
+          - name: numactl
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
