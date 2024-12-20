@@ -11,41 +11,10 @@
 }:
 
 let
-  gdu_static = pkgs.gdu.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  gh_static = pkgs.gh.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  bazelisk_static = pkgs.bazelisk.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  croc_static = pkgs.croc.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  go_task_static = pkgs.go-task.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  git_lfs_static = pkgs.git-lfs.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  gost_static = pkgs.gost.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  shfmt_static = pkgs.shfmt.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
-  fzf_static = pkgs.fzf.overrideAttrs (oldAttrs: rec {
-    CGO_ENABLED = "0";
-  });
   silver_searcher_static = old.pkgsStatic.silver-searcher.overrideAttrs (oldAttrs: rec {
     NIX_LDFLAGS = "";
   });
   diffutils_static = pkgs.pkgsStatic.diffutils.overrideAttrs (oldAttrs: rec {
-    doCheck = false;
-  });
-  wget_static = pkgs.pkgsStatic.wget.overrideAttrs (oldAttrs: rec {
-    nativeBuildInputs = [ pkgs.gettext pkgs.pkg-config pkgs.lzip pkgs.libiconv pkgs.libintl ];
     doCheck = false;
   });
   zsh_static = old.pkgsStatic.zsh.overrideAttrs (oldAttrs: rec {
@@ -84,11 +53,6 @@ let
   });
   cmake_static = pkgs.pkgsStatic.cmakeMinimal.overrideAttrs (oldAttrs: rec {
     doCheck = false;
-  });
-  krb5_static = pkgs.pkgsStatic.krb5.overrideAttrs (oldAttrs: rec {
-    env = {
-      NIX_CFLAGS_COMPILE = "-fcommon";
-    };
   });
   git_static = pkgs.pkgsStatic.git.overrideAttrs (oldAttrs: rec {
     # buildInputs = builtins.filter (dep: dep != pkgs.curl)(oldAttrs.buildInputs) ++ [
@@ -208,19 +172,9 @@ EOF
   });
 in
 {
-  inherit bazelisk_static;
-  inherit croc_static;
-  inherit gdu_static;
-  inherit gh_static;
-  inherit git_lfs_static;
-  inherit go_task_static;
-  inherit gost_static;
   inherit silver_searcher_static;
   inherit shfmt_static;
-  inherit fzf_static;
   inherit zsh_static;
-  inherit wget_static;
-  inherit krb5_static;
   inherit diffutils_static;
   inherit protobuf3_20_static;
   inherit python311_static;
