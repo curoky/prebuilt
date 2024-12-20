@@ -269,6 +269,7 @@ jobs:
       - run: ~/.local/bin/task ${{ matrix.name }}
       - run: ./pack.py
       - run: tar -czvf ${{ matrix.name }}.linux_amd64.tar.gz --strip-components=2 /tmp/output
+      
       - uses: svenstaro/upload-release-action@v2
         with:
           file: ${{ matrix.name }}.linux_amd64.tar.gz

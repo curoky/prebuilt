@@ -116,12 +116,21 @@ tasks:
 
   diffutils_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix diffutils_static
   gnupg_minimal_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix gnupg_minimal_static
-  silver_searcher_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix silver_searcher_static
   zsh_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix zsh_static
 
-  protobuf_3_8_0_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_8_0_static
-  protobuf_3_9_2_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_9_2_static
   python311_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix python311_static
+
+  silver_searcher_patched:
+    - task: setup-extra
+    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix silver_searcher_static
+
+  protobuf_3_8_0_patched:
+    - task: setup-extra
+    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_8_0_static
+
+  protobuf_3_9_2_patched:
+    - task: setup-extra
+    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_9_2_static
 
   wget:
     - task: setup-extra
