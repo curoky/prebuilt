@@ -85,7 +85,6 @@ tasks:
   protobuf_25: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.protobuf_25
   protobuf_28: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.protobuf_28
   rsync: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.rsync
-  ruff: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.ruff
   snappy: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.snappy
   starship: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.starship
   strace: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.strace
@@ -123,9 +122,12 @@ tasks:
 
   diffutils_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix diffutils_static
   gnupg_minimal_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix gnupg_minimal_static
-  zsh_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix zsh_static
 
   python311_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix python311_static
+
+  zsh_patched:
+    - task: setup-extra
+    - nix-env -I old=$HOME/.nix-defexpr/channels/old -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix zsh_static
 
   silver_searcher_patched:
     - task: setup-extra
@@ -142,6 +144,10 @@ tasks:
   wget:
     - task: setup-extra
     - nix-env -p ~/nix/profiles/prebuilt -iA old.pkgsStatic.wget
+
+  ruff:
+    - task: setup-extra
+    - nix-env -p ~/nix/profiles/prebuilt -iA old.pkgsStatic.ruff
 
   git:
     - task: setup-extra

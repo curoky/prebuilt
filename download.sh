@@ -23,7 +23,7 @@ pkgs=(
   curl
   diffutils_patched
   ethtool
-  # eza
+  eza
   fd
   file
   findutils
@@ -34,7 +34,7 @@ pkgs=(
   gdu_patched
   gettext
   gh_patched
-  # git
+  git
   git-absorb
   git-extras
   # git-lfs
@@ -80,19 +80,20 @@ pkgs=(
   pkg-config
   procps
   procs
-  # protobuf_24
-  # protobuf_25
-  # protobuf_28
-  # protobuf_3_8_0_patched
-  # protobuf_3_9_2_patched
-  # python311_patched
+  protobuf_24
+  protobuf_25
+  protobuf_28
+  protobuf_3_8_0_patched
+  protobuf_3_9_2_patched
+  python311_patched
   rsync
-  # ruff
+  ruff
   # setup
   # setup-extra
   # shfmt
   shfmt_patched
-  # silver_searcher_patched
+  # silver-searcher
+  silver_searcher_patched
   snappy
   starship
   strace
@@ -102,13 +103,14 @@ pkgs=(
   unzip
   util-linux
   vim
-  # wget
+  wget
   xxd
   xz
   zip
   zlib
   zlib-ng
-  # zsh_patched
+  # zsh
+  zsh_patched
   zstd
 )
 for pkg in "${pkgs[@]}"; do
