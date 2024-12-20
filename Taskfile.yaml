@@ -104,11 +104,12 @@ tasks:
   silver-searcher: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.silver-searcher
   zsh: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zsh
 
-  fzf: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.fzf
-  git-lfs: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.git-lfs
-  go-task: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.go-task
-  gost: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gost
-  shfmt: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.shfmt
+  # not static for macos
+  fzf: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.fzf
+  git-lfs: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.git-lfs
+  go-task: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.go-task
+  gost: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.gost
+  shfmt: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.shfmt
 
   bazelisk_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/gopkgs-without-cgo.nix bazelisk_static
   croc_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/gopkgs-without-cgo.nix croc_static
