@@ -94,7 +94,7 @@ tasks:
   zlib-ng: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zlib-ng
   zlib: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zlib
   zstd: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zstd
-  
+
   silver-searcher: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.silver-searcher
   zsh: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zsh
 
@@ -113,12 +113,12 @@ tasks:
   go_task_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/gopkgs-without-cgo.nix go_task_static
   gost_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/gopkgs-without-cgo.nix gost_static
   shfmt_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/gopkgs-without-cgo.nix shfmt_static
-  
+
   diffutils_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix diffutils_static
   gnupg_minimal_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix gnupg_minimal_static
   silver_searcher_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix silver_searcher_static
   zsh_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix zsh_static
-  
+
   protobuf_3_8_0_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_8_0_static
   protobuf_3_9_2_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_9_2_static
   python311_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix python311_static
