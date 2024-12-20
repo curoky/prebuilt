@@ -16,7 +16,12 @@ tasks:
     - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
     - nix-channel --update
     - nix-channel --list
-    - mkdir -p ~/nix/profiles
+  # setup-old:
+  #   - nix-channel --add https://nixos.org/channels/nixos-24.11 nixpkgs
+  #   - nix-channel --update
+  # setup-git_fix:
+  #   - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz nixpkgs
+  #   - nix-channel --update
 
   aria2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.aria2
   atuin: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.atuin
@@ -124,16 +129,15 @@ tasks:
 
   silver_searcher_patched:
     - task: setup-extra
-    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix silver_searcher_static
+    - nix-env -I old=~/.nix-defexpr/channels/old -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix silver_searcher_static
 
   protobuf_3_8_0_patched:
     - task: setup-extra
-    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_8_0_static
+    - nix-env -I old=~/.nix-defexpr/channels/old -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_8_0_static
 
   protobuf_3_9_2_patched:
     - task: setup-extra
-    - nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_9_2_static
-
+    - nix-env -I old=~/.nix-defexpr/channels/old -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix protobuf_3_9_2_static
   wget:
     - task: setup-extra
     - nix-env -p ~/nix/profiles/prebuilt -iA old.pkgsStatic.wget

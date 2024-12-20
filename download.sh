@@ -23,7 +23,7 @@ pkgs=(
   curl
   diffutils_patched
   ethtool
-  eza
+  # eza
   fd
   file
   findutils
@@ -92,7 +92,7 @@ pkgs=(
   # setup-extra
   # shfmt
   shfmt_patched
-  silver_searcher_patched
+  # silver_searcher_patched
   snappy
   starship
   strace
@@ -102,13 +102,13 @@ pkgs=(
   unzip
   util-linux
   vim
-  wget
+  # wget
   xxd
   xz
   zip
   zlib
   zlib-ng
-  zsh_patched
+  # zsh_patched
   zstd
 )
 for pkg in "${pkgs[@]}"; do
