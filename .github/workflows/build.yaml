@@ -113,12 +113,11 @@ jobs:
       - run: task setup
       - run: task bzip2
       - run: ./pack.py
-      - run: tar -czvf bzip2.x86_64.tar.gz /tmp/output
-
+      - run: tar -czvf bzip2.linux_amd64.tar.gz /tmp/output
       - uses: svenstaro/upload-release-action@v2
         with:
-          file: bzip2.tar.gz
-          asset_name: bzip2.tar.gz
+          file: bzip2.linux_amd64.tar.gz
+          asset_name: bzip2.linux_amd64.tar.gz
           tag: 'v1.0'
           overwrite: true
   #     - run: docker pull curoky/dotbox:stage-prebuilt
