@@ -92,8 +92,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: Homebrew/actions/setup-homebrew@master
-      - run: brew install go-task
+      # - uses: Homebrew/actions/setup-homebrew@master
+      # - run: brew install go-task
       - uses: actions/setup-python@v5
         with:
           python-version: "3"
@@ -109,9 +109,10 @@ jobs:
       # - name: Install Dependencies
       #   if: steps.cache.outputs.cache-hit != 'true'
       #   run: /install.sh
+      - run: sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 
-      - run: task setup
-      - run: task bzip2
+      - run: ~/.local/bin/task setup
+      - run: ~/.local/bin/task bzip2
       - run: ./pack.py
       - run: tar -czvf bzip2.linux_amd64.tar.gz /tmp/output
       - uses: svenstaro/upload-release-action@v2
