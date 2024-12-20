@@ -43,6 +43,9 @@ jobs:
           - name: zip
           - name: zsh
           - name: zstd
+          - name: zsh-bundle
+          - name: vim-bundle
+          - name: rime-bundle
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -181,6 +184,8 @@ jobs:
           # - name: zsh
           - name: zsh_patched
           - name: zstd
+          - name: zsh-bundle
+          - name: vim-bundle
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
