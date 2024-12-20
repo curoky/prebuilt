@@ -3,13 +3,12 @@ name: build
 on:
   push:
     paths:
-      - '.github/workflows/build.yaml'
+      - ".github/workflows/build.yaml"
   workflow_dispatch:
   # schedule:
   #   - cron: '0 0 * * 0'
 
 jobs:
-
   # macos:
   #   runs-on: macos-latest
 
@@ -98,13 +97,20 @@ jobs:
       - run: brew install go-task
       - uses: actions/setup-python@v5
         with:
-          python-version: '3'
+          python-version: "3"
       - uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-24.11
       - run: task setup
       - run: task bzip2
       - run: ./pack.py
+
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          file: bzip2.tar.gz
+          asset_name: bzip2.tar.gz
+          tag: 'v1.0'
+          overwrite: true
   #     - run: docker pull curoky/dotbox:stage-prebuilt
   #     - run: |
   #         id=$(docker create curoky/dotbox:stage-prebuilt)
