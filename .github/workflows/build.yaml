@@ -100,14 +100,19 @@ jobs:
           - name: bzip2
           - name: connect
           - name: coreutils
+          - name: fzf
           - name: gettext
+          - name: git-lfs
           - name: gnupatch
+          - name: go-task
+          - name: gost
           - name: inetutils
           - name: lsof
           - name: m4
           - name: ncdu_1
           - name: netcat
           - name: rsync
+          - name: shfmt
           - name: silver-searcher
           - name: unzip
           - name: vim
@@ -166,7 +171,7 @@ jobs:
           - name: flex
           # - name: fzf
           - name: fzf_patched
-          # - name: gdb
+          - name: gdb
           - name: gdu_patched
           - name: gettext
           - name: gh_patched
@@ -196,7 +201,7 @@ jobs:
           - name: less
           - name: libcap
           - name: libtool
-          # - name: llvmPackages_18.clang-unwrapped
+          - name: llvmPackages_18.clang-unwrapped
           - name: lsb-release
           - name: lsof
           - name: m4
