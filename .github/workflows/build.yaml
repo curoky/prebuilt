@@ -104,14 +104,14 @@ jobs:
           - name: m4
           - name: ncdu_1
           - name: netcat
+          - name: rsync
+          - name: silver-searcher
           - name: unzip
           - name: vim
           - name: xz
           - name: zip
+          - name: zsh
           - name: zstd
-          # - name: silver-searcher
-          # - name: rsync
-          # - name: zsh
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -146,36 +146,43 @@ jobs:
           - name: automake
           - name: bash
           - name: bat
-          - name: bazelisk_static
+          - name: bazelisk_patched
           - name: binutils
           - name: bison
           - name: bzip2
           - name: connect
           - name: coreutils
-          - name: croc_static
+          - name: croc_patched
           - name: curl
+          - name: diffutils_patched
           - name: ethtool
           - name: eza
           - name: fd
           - name: file
           - name: findutils
           - name: flex
-          - name: fzf_static
-          - name: gdb
-          - name: gdu_static
+          # - name: fzf
+          - name: fzf_patched
+          # - name: gdb
+          - name: gdu_patched
           - name: gettext
-          - name: gh_static
+          - name: gh_patched
+          - name: git
           - name: git-absorb
           - name: git-extras
-          - name: git_lfs_static
+          # - name: git-lfs
+          - name: git_lfs_patched
           - name: glibcLocales
           - name: gnugrep
           - name: gnumake
           - name: gnupatch
+          - name: gnupg_minimal_patched
           - name: gnused
           - name: gnutar
-          - name: go_task_static
-          - name: gost_static
+          # - name: go-task
+          - name: go_task_patched
+          # - name: gost
+          - name: gost_patched
           - name: gzip
           - name: inetutils
           - name: iproute2
@@ -209,11 +216,16 @@ jobs:
           - name: protobuf_24
           - name: protobuf_25
           - name: protobuf_28
+          - name: protobuf_3_8_0_patched
+          - name: protobuf_3_9_2_patched
+          - name: python311_patched
           - name: rsync
           - name: ruff
           # - name: setup
           # - name: setup-extra
-          - name: shfmt_static
+          # - name: shfmt
+          - name: shfmt_patched
+          - name: silver_searcher_patched
           - name: snappy
           - name: starship
           - name: strace
@@ -223,11 +235,13 @@ jobs:
           - name: unzip
           - name: util-linux
           - name: vim
+          - name: wget
           - name: xxd
           - name: xz
           - name: zip
           - name: zlib
           - name: zlib-ng
+          - name: zsh_patched
           - name: zstd
     steps:
       - uses: actions/checkout@v4
