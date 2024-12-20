@@ -6,7 +6,7 @@ on:
       - ".github/workflows/build.yaml"
   workflow_dispatch:
   # schedule:
-  #   - cron: '0 0 * * 0'
+  #   - cron: '0 0 - name: - name: 0'
 
 jobs:
   # macos:
@@ -93,22 +93,22 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: bzip2
-          - name: xz
-          - name: zstd
-          - name: zip
-          - name: unzip
-          - name: gettext
-          - name: m4
-          - name: gnupatch
-          - name: netcat
-          - name: lsof
-          - name: connect
-          - name: ncdu_1
-          - name: coreutils
-          - name: inetutils
           - name: aria2
+          - name: bzip2
+          - name: connect
+          - name: coreutils
+          - name: gettext
+          - name: gnupatch
+          - name: inetutils
+          - name: lsof
+          - name: m4
+          - name: ncdu_1
+          - name: netcat
+          - name: unzip
           - name: vim
+          - name: xz
+          - name: zip
+          - name: zstd
           # - name: silver-searcher
           # - name: rsync
           # - name: zsh
@@ -138,6 +138,7 @@ jobs:
       contents: write
     strategy:
       matrix:
+        # task --list-all | sed -e 's/://g' -e 's/*/- name:/g'
         include:
           - name: aria2
           - name: atuin
@@ -145,11 +146,13 @@ jobs:
           - name: automake
           - name: bash
           - name: bat
+          - name: bazelisk_static
           - name: binutils
           - name: bison
           - name: bzip2
           - name: connect
           - name: coreutils
+          - name: croc_static
           - name: curl
           - name: ethtool
           - name: eza
@@ -157,17 +160,24 @@ jobs:
           - name: file
           - name: findutils
           - name: flex
+          - name: fzf_static
           - name: gdb
-          - name: gdb
+          - name: gdu_static
           - name: gettext
+          - name: gh_static
+          - name: git-absorb
           - name: git-extras
+          - name: git_lfs_static
           - name: glibcLocales
           - name: gnugrep
           - name: gnumake
           - name: gnupatch
           - name: gnused
           - name: gnutar
+          - name: go_task_static
+          - name: gost_static
           - name: gzip
+          - name: inetutils
           - name: iproute2
           - name: iptables
           - name: iputils
@@ -176,6 +186,7 @@ jobs:
           - name: less
           - name: libcap
           - name: libtool
+          # - name: llvmPackages_18.clang-unwrapped
           - name: lsb-release
           - name: lsof
           - name: m4
@@ -185,6 +196,8 @@ jobs:
           - name: netcat
           - name: nettools
           - name: ninja
+          # - name: nixfmt-rfc-style
+          - name: nixpkgs-fmt
           - name: numactl
           - name: openssh_gssapi
           - name: openssl
@@ -198,6 +211,9 @@ jobs:
           - name: protobuf_28
           - name: rsync
           - name: ruff
+          # - name: setup
+          # - name: setup-extra
+          - name: shfmt_static
           - name: snappy
           - name: starship
           - name: strace
