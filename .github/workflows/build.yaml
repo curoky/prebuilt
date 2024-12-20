@@ -92,7 +92,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
       - uses: Homebrew/actions/setup-homebrew@master
       - run: brew install go-task
       - uses: actions/setup-python@v5
@@ -101,9 +100,20 @@ jobs:
       - uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-24.11
+
+      # - uses: actions/cache@v4
+      #   id: cache
+      #   with:
+      #     path: path/to/dependencies
+      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+      # - name: Install Dependencies
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   run: /install.sh
+
       - run: task setup
       - run: task bzip2
       - run: ./pack.py
+      - run: tar -czvf bzip2.x86_64.tar.gz /tmp/output
 
       - uses: svenstaro/upload-release-action@v2
         with:
