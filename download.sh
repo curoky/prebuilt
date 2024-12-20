@@ -117,13 +117,9 @@ for pkg in "${pkgs[@]}"; do
   curl -sSL -o tmp/download/${pkg}.tar.gz https://github.com/curoky/prebuilt/releases/download/v1.0/${pkg}.linux_amd64.tar.gz &
 done
 
-# mkdir tmp/prebuilt
-
 wait
 
 for pkg in "${pkgs[@]}"; do
   mkdir -p tmp/prebuilt/${pkg}
   tar -xv --gunzip -f tmp/download/${pkg}.tar.gz -C tmp/prebuilt/${pkg} --strip-components 2
 done
-
-# wget https://github.com/curoky/prebuilt/releases/download/v1.0/aria2.darwin_arm64.tar.gz
