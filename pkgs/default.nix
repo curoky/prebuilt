@@ -173,7 +173,6 @@ EOF
 in
 {
   inherit silver_searcher_static;
-  inherit shfmt_static;
   inherit zsh_static;
   inherit diffutils_static;
   inherit protobuf3_20_static;
