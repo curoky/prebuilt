@@ -104,12 +104,12 @@ jobs:
           - name: netcat
           - name: lsof
           - name: connect
-          - name: inetutils
+          # - name: inetutils
           - name: ncdu_1
           - name: coreutils
-          - name: silver-searcher
-          - name: rsync
-          - name: aria2
+          # - name: silver-searcher
+          # - name: rsync
+          # - name: aria2
           - name: zsh
           - name: vim
     steps:
