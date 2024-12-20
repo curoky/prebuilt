@@ -59,7 +59,7 @@ tasks:
   tzdata: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.tzdata.out
   netcat: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.netcat
 
-  glibcLocales: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.glibcLocales
+  glibcLocales: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.glibcLocales
   binutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.binutils
   bison: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bison
   coreutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.coreutils
