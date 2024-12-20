@@ -94,6 +94,24 @@ jobs:
       matrix:
         include:
           - name: bzip2
+          - name: xz
+          - name: zstd
+          - name: zip
+          - name: unzip
+          - name: gettext
+          - name: m4
+          - name: gnupatch
+          - name: netcat
+          - name: lsof
+          - name: connect
+          - name: inetutils
+          - name: ncdu_1
+          - name: coreutils
+          - name: silver-searcher
+          - name: rsync
+          - name: aria2
+          - name: zsh
+          - name: vim
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -160,6 +178,21 @@ jobs:
           - name: zstd
           - name: util-linux
           - name: numactl
+          - name: openssl
+          
+          - name: tzdata
+          - name: netcat
+          - name: glibcLocales
+          - name: binutils
+          - name: bison
+          - name: coreutils
+          - name: flex
+          - name: gettext
+          - name: git-extras
+          - name: gnumake
+          - name: m4
+          - name: file
+          - name: vim
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

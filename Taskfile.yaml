@@ -3,14 +3,17 @@ version: "3"
 tasks:
   setup:
     cmds:
-      - nix-channel --add https://nixos.org/channels/nixos-24.05 old
       - nix-channel --add https://nixos.org/channels/nixos-24.11 nixpkgs
-      - nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
-      - nix-channel --add https://github.com/NixOS/nixpkgs/archive/master.tar.gz master
-      - nix-channel --add https://github.com/NixOS/nixpkgs/archive/staging.tar.gz staging
-      - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
       - nix-channel --update
       - mkdir -p ~/nix/profiles
+  setup-extra:
+    - nix-channel --add https://nixos.org/channels/nixos-24.05 old
+    - nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+    - nix-channel --add https://github.com/NixOS/nixpkgs/archive/master.tar.gz master
+    - nix-channel --add https://github.com/NixOS/nixpkgs/archive/staging.tar.gz staging
+    - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
+    - nix-channel --update
+    - mkdir -p ~/nix/profiles
 
   bzip2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bzip2
   connect: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.connect
@@ -51,3 +54,20 @@ tasks:
   zstd: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zstd
   util-linux: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.util-linux
   numactl: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.numactl
+
+  openssl: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.openssl.bin
+  tzdata: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.tzdata.out
+  netcat: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.netcat
+
+  glibcLocales: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.glibcLocales
+  binutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.binutils
+  bison: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.bison
+  coreutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.coreutils
+  flex: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.flex
+  gettext: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.gettext
+  git-extras: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.git-extras
+  gnumake: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.gnumake
+  m4: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.m4
+
+  file: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.file
+  vim: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.vim
