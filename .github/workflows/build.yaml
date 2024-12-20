@@ -276,3 +276,7 @@ jobs:
           asset_name: ${{ matrix.name }}.linux_amd64.tar.gz
           tag: "v1.0"
           overwrite: true
+
+      - uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() }}
+        timeout-minutes: 30
