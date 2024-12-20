@@ -1,0 +1,52 @@
+version: "3"
+
+tasks:
+  setup:
+    cmds:
+      - nix-channel --add https://nixos.org/channels/nixos-24.05 old
+      - nix-channel --add https://nixos.org/channels/nixos-24.11 nixpkgs
+      - nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+      - nix-channel --add https://github.com/NixOS/nixpkgs/archive/master.tar.gz master
+      - nix-channel --add https://github.com/NixOS/nixpkgs/archive/staging.tar.gz staging
+      - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
+      - nix-channel --update
+      - mkdir -p ~/nix/profiles/
+  bzip2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bzip2
+  connect: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.connect
+  curl: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.curl
+  ethtool: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.ethtool
+  findutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.findutils
+  gnugrep: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnugrep
+  gnupatch: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnupatch
+  gnused: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnused
+  gnutar: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnutar
+  gzip: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gzip
+  iproute2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.iproute2
+  iptables: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.iptables
+  iputils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.iputils
+  jq: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.jq
+  krb5: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.krb5
+  less: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.less
+  libcap: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.libcap
+  lsb-release: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.lsb-release
+  lsof: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.lsof
+  ncdu_1: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.ncdu_1
+  nettools: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.nettools
+  ninja: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.ninja
+  openssh_gssapi: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.openssh_gssapi
+  patchelf: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.patchelf
+  procps: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.procps
+  rsync: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.rsync
+  snappy: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.snappy
+  strace: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.strace
+  tmux: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.tmux
+  tree: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.tree
+  xxd: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.unixtools.xxd
+  unzip: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.unzip
+  xz: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.xz
+  zip: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zip
+  zlib: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zlib
+  zlib-ng: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zlib-ng
+  zstd: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.zstd
+  util-linux: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.util-linux
+  numactl: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.numactl
