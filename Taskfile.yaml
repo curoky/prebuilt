@@ -123,6 +123,9 @@ tasks:
 
   diffutils_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix diffutils_static
   gnupg_minimal_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix gnupg_minimal_static
+  vim-bundle: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix vim-bundle
+  zsh-bundle: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix zsh-bundle
+  rime-bundle: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix rime-bundle
 
   python311_patched: nix-env -p ~/nix/profiles/prebuilt -iA -f pkgs/default.nix python311_static
 

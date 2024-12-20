@@ -191,4 +191,8 @@ in
   gnupg_minimal_static = pkgs.pkgsStatic.gnupg.override {
     enableMinimal = true;
   };
+
+  zsh-bundle = pkgs.callPackage ./zsh-bundle.nix { };
+  vim-bundle = pkgs.callPackage ./vim-bundle.nix { };
+  rime-bundle = pkgs.callPackage ./rime-bundle.nix { };
 }
