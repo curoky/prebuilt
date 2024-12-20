@@ -34,7 +34,7 @@ pkgs=(
   gdu_patched
   gettext
   gh_patched
-  git
+  # git
   git-absorb
   git-extras
   # git-lfs
@@ -80,14 +80,14 @@ pkgs=(
   pkg-config
   procps
   procs
-  protobuf_24
-  protobuf_25
-  protobuf_28
-  protobuf_3_8_0_patched
-  protobuf_3_9_2_patched
-  python311_patched
+  # protobuf_24
+  # protobuf_25
+  # protobuf_28
+  # protobuf_3_8_0_patched
+  # protobuf_3_9_2_patched
+  # python311_patched
   rsync
-  ruff
+  # ruff
   # setup
   # setup-extra
   # shfmt
@@ -121,7 +121,7 @@ wait
 
 for pkg in "${pkgs[@]}"; do
   mkdir -p tmp/prebuilt/${pkg}
-  tar -xv --gunzip -f tmp/download/${pkg}.tar.gz -C tmp/prebuilt/${pkg} --strip-components 1
+  tar -xv --gunzip -f tmp/download/${pkg}.tar.gz -C tmp/prebuilt/${pkg} --strip-components 2
 done
 
 # wget https://github.com/curoky/prebuilt/releases/download/v1.0/aria2.darwin_arm64.tar.gz
