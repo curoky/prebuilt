@@ -86,6 +86,43 @@ jobs:
   #       if: ${{ failure() }}
   #       timeout-minutes: 30
 
+  macos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        include:
+          - name: bzip2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3"
+      - uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-24.11
+
+      # - uses: actions/cache@v4
+      #   id: cache
+      #   with:
+      #     path: path/to/dependencies
+      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+      # - name: Install Dependencies
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   run: /install.sh
+      - run: sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
+
+      - run: ~/.local/bin/task setup
+      - run: ~/.local/bin/task ${{ matrix.name }}
+      - run: ./pack.py
+      - run: tar -czvf ${{ matrix.name }}.darwin_arm64.tar.gz --strip-components=2 /tmp/output
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          file: ${{ matrix.name }}.darwin_arm64.tar.gz
+          asset_name: ${{ matrix.name }}.darwin_arm64.tar.gz
+          tag: "v1.0"
+          overwrite: true
   linux:
     runs-on: ubuntu-latest
     permissions:
