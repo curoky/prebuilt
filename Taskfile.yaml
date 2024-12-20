@@ -5,6 +5,7 @@ tasks:
     cmds:
       - nix-channel --add https://nixos.org/channels/nixos-24.11 nixpkgs
       - nix-channel --update
+      - nix-channel --list
       - mkdir -p ~/nix/profiles
 
   setup-extra:
@@ -14,6 +15,7 @@ tasks:
     - nix-channel --add https://github.com/NixOS/nixpkgs/archive/staging.tar.gz staging
     - nix-channel --add https://github.com/tobim/nixpkgs/archive/refs/heads/pkgs/git-static.tar.gz git_fix
     - nix-channel --update
+    - nix-channel --list
     - mkdir -p ~/nix/profiles
 
   aria2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.aria2
