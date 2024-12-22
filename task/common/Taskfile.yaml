@@ -55,6 +55,7 @@ tasks:
   gnused: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnused
   gnutar: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gnutar
   gzip: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gzip
+  indent: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.indent
   inetutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.inetutils
   iproute2: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.iproute2
   iptables: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.iptables

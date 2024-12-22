@@ -47,13 +47,13 @@ jobs:
           # - name: vim-bundle
           # - name: rime-bundle
 
-          - name: gawk
-          - name: gnugrep
-          - name: gnutar
-          - name: gnused
+          # - name: gawk
+          # - name: gnugrep
+          # - name: gnutar
+          # - name: gnused
           - name: indent
-          - name: getopt
-          - name: openssl
+          # - name: getopt
+          # - name: openssl
 
     steps:
       - uses: actions/checkout@v4
@@ -197,9 +197,9 @@ jobs:
           # - name: zsh-bundle
           # - name: zstd
           
-          - name: gawk
+          # - name: gawk
           - name: indent
-          - name: getopt
+          # - name: getopt
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
