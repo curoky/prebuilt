@@ -19,33 +19,42 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: aria2
-          - name: bzip2
-          - name: connect
-          - name: coreutils
-          - name: fzf
-          - name: gettext
-          - name: git-lfs
-          - name: gnupatch
-          - name: go-task
-          - name: gost
-          - name: inetutils
-          - name: lsof
-          - name: m4
-          - name: ncdu_1
-          - name: netcat
-          - name: rsync
-          - name: shfmt
-          - name: silver-searcher
-          - name: unzip
-          - name: vim
-          - name: xz
-          - name: zip
-          - name: zsh
-          - name: zstd
-          - name: zsh-bundle
-          - name: vim-bundle
-          - name: rime-bundle
+          # - name: aria2
+          # - name: bzip2
+          # - name: connect
+          # - name: coreutils
+          # - name: fzf
+          # - name: gettext
+          # - name: git-lfs
+          # - name: gnupatch
+          # - name: go-task
+          # - name: gost
+          # - name: inetutils
+          # - name: lsof
+          # - name: m4
+          # - name: ncdu_1
+          # - name: netcat
+          # - name: rsync
+          # - name: shfmt
+          # - name: silver-searcher
+          # - name: unzip
+          # - name: vim
+          # - name: xz
+          # - name: zip
+          # - name: zsh
+          # - name: zstd
+          # - name: zsh-bundle
+          # - name: vim-bundle
+          # - name: rime-bundle
+
+          - name: gawk
+          - name: gnugrep
+          - name: gnutar
+          - name: gnused
+          - name: indent
+          - name: getopt
+          - name: openssl
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -83,109 +92,109 @@ jobs:
       matrix:
         # task --list-all | sed -e 's/://g' -e 's/*/- name:/g'
         include:
-          - name: aria2
-          - name: atuin
-          - name: autoconf
-          - name: automake
-          - name: bash
-          - name: bat
-          - name: bazelisk
-          - name: binutils
-          - name: bison
-          - name: buildifier
-          - name: bzip2
-          - name: cacert
-          - name: connect
-          - name: coreutils
-          - name: croc
-          - name: curl
-          - name: diffutils
-          - name: ethtool
-          - name: eza
-          - name: fd
-          - name: file
-          - name: findutils
-          - name: flex
-          - name: fzf
-          - name: gdb
-          - name: gdu
-          - name: gettext
-          - name: gh
-          - name: git
-          - name: git-absorb
-          - name: git-extras
-          - name: git-lfs
-          - name: glibcLocales
-          - name: gnugrep
-          - name: gnumake
-          - name: gnupatch
-          - name: gnupg-minimal
-          - name: gnused
-          - name: gnutar
-          - name: go-task
-          - name: gost
-          - name: gzip
-          - name: inetutils
-          - name: iproute2
-          - name: iptables
-          - name: iputils
-          - name: jq
-          - name: krb5
-          - name: less
-          - name: libcap
-          - name: libtool
-          - name: llvmPackages_18.clang-unwrapped
-          - name: lsb-release
-          - name: lsof
-          - name: m4
-          - name: man
-          - name: miniserve
-          - name: ncdu_1
-          - name: netcat
-          - name: nettools
-          - name: ninja
-          - name: nixfmt-rfc-style
-          - name: nixpkgs-fmt
-          - name: numactl
-          - name: openssh_gssapi
-          - name: openssl
-          - name: patchelf
-          - name: perl
-          - name: pkg-config
-          - name: procps
-          - name: procs
-          - name: protobuf_24
-          - name: protobuf_25
-          - name: protobuf_28
-          - name: protobuf_3_8_0
-          - name: protobuf_3_9_2
-          - name: python311
-          - name: rime-bundle
-          - name: rsync
-          - name: ruff
-          # - name: setup
-          # - name: setup-extra
-          - name: shfmt
-          - name: silver-searcher
-          - name: snappy
-          - name: starship
-          - name: strace
-          - name: tmux
-          - name: tmux-bundle
-          - name: tree
-          - name: tzdata
-          - name: unzip
-          - name: util-linux
-          - name: vim
-          - name: vim-bundle
-          - name: wget
-          - name: xxd
-          - name: xz
-          - name: zip
-          - name: zlib
-          - name: zlib-ng
-          - name: zsh
-          - name: zsh-bundle
+          # - name: aria2
+          # - name: atuin
+          # - name: autoconf
+          # - name: automake
+          # - name: bash
+          # - name: bat
+          # - name: bazelisk
+          # - name: binutils
+          # - name: bison
+          # - name: buildifier
+          # - name: bzip2
+          # - name: cacert
+          # - name: connect
+          # - name: coreutils
+          # - name: croc
+          # - name: curl
+          # - name: diffutils
+          # - name: ethtool
+          # - name: eza
+          # - name: fd
+          # - name: file
+          # - name: findutils
+          # - name: flex
+          # - name: fzf
+          # - name: gdb
+          # - name: gdu
+          # - name: gettext
+          # - name: gh
+          # - name: git
+          # - name: git-absorb
+          # - name: git-extras
+          # - name: git-lfs
+          # - name: glibcLocales
+          # - name: gnugrep
+          # - name: gnumake
+          # - name: gnupatch
+          # - name: gnupg-minimal
+          # - name: gnused
+          # - name: gnutar
+          # - name: go-task
+          # - name: gost
+          # - name: gzip
+          # - name: inetutils
+          # - name: iproute2
+          # - name: iptables
+          # - name: iputils
+          # - name: jq
+          # - name: krb5
+          # - name: less
+          # - name: libcap
+          # - name: libtool
+          # - name: llvmPackages_18.clang-unwrapped
+          # - name: lsb-release
+          # - name: lsof
+          # - name: m4
+          # - name: man
+          # - name: miniserve
+          # - name: ncdu_1
+          # - name: netcat
+          # - name: nettools
+          # - name: ninja
+          # - name: nixfmt-rfc-style
+          # - name: nixpkgs-fmt
+          # - name: numactl
+          # - name: openssh_gssapi
+          # - name: openssl
+          # - name: patchelf
+          # - name: perl
+          # - name: pkg-config
+          # - name: procps
+          # - name: procs
+          # - name: protobuf_24
+          # - name: protobuf_25
+          # - name: protobuf_28
+          # - name: protobuf_3_8_0
+          # - name: protobuf_3_9_2
+          # - name: python311
+          # - name: rime-bundle
+          # - name: rsync
+          # - name: ruff
+          # # - name: setup
+          # # - name: setup-extra
+          # - name: shfmt
+          # - name: silver-searcher
+          # - name: snappy
+          # - name: starship
+          # - name: strace
+          # - name: tmux
+          # - name: tmux-bundle
+          # - name: tree
+          # - name: tzdata
+          # - name: unzip
+          # - name: util-linux
+          # - name: vim
+          # - name: vim-bundle
+          # - name: wget
+          # - name: xxd
+          # - name: xz
+          # - name: zip
+          # - name: zlib
+          # - name: zlib-ng
+          # - name: zsh
+          # - name: zsh-bundle
           - name: zstd
     steps:
       - uses: actions/checkout@v4
