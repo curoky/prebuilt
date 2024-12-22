@@ -195,7 +195,11 @@ jobs:
           # - name: zlib-ng
           # - name: zsh
           # - name: zsh-bundle
-          - name: zstd
+          # - name: zstd
+          
+          - name: gawk
+          - name: indent
+          - name: getopt
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

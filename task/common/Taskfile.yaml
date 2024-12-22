@@ -27,6 +27,8 @@ tasks:
   atuin: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.atuin
   autoconf: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.autoconf
   automake: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.automake
+  gawk: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.gawk
+  getopt: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.getopt
   bash: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bash
   bat: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.bat
   binutils: nix-env -p ~/nix/profiles/prebuilt -iA nixpkgs.pkgsStatic.binutils
